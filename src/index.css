@@ -5,5 +5,8 @@
 @layer components {
     .c_container{
         @apply max-w-screen-xl mx-auto p-10
-    }
+    }   
+}
+.active{
+    @apply  text-white bg-green-500
 }

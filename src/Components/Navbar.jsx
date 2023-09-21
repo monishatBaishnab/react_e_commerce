@@ -9,7 +9,7 @@ const Navbar = () => {
     }
     return (
         <nav className="flex items-center justify-between max-w-screen-xl mx-auto px-10 py-2 border-b relative">
-            <a href="#" className="text-2xl text-green-500 font-medium">SweetProcudt</a>
+            <Link to='/' className="text-2xl text-green-500 font-medium">SweetProcudt</Link>
             <div className={`absolute delay-100 transition-all ${open === true ? 'top-full opacity-100 visible' : 'top-8 opacity-0 invisible'} top-full right-10 p-3 bg-white border md:static md:bg-transparent md:border-0 md:opacity-100 md:visible`}>
                 <ul className="flex flex-col items-start gap-2 md:flex-row md:items-center">
                     <li><Link to="/">Home</Link></li>

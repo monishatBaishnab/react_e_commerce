@@ -17,19 +17,22 @@ const route = createBrowserRouter([
             {
                 path: '/',
                 element: <DefaultHome />,
-                loader: () => fetch('https://fakestoreapi.com/products/categories'),
+                loader: () => {
+                    const categorys = fetch('https://fakestoreapi.com/products/categories');
+                    return categorys;
+                },
                 children: [
+                    {
+                        path: '/',
+                        element: <Category />,
+                        loader: () => fetch(`https://fakestoreapi.com/products`)
+                    },
                     {
                         path: '/categoryData/:category',
                         element: <Category />,
-                        loader: ({params}) => fetch(`https://fakestoreapi.com/products/category/${params.category}`)
+                        loader: ({params}) => fetch(`https://fakestoreapi.com/products/category/${params?.category}`)
                     }
                 ]
-            },
-            {
-                path: '/:category',
-                element: <h2>Hello Demo</h2>,
-                loader: ({params}) => params
             },
             {
                 path: '/about',
